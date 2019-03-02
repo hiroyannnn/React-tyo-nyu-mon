@@ -26,6 +26,12 @@
                     React.createElement('span',null, this.state.count),
                     ]
             }
+            componentDidMount(){
+                console.log('マウントされました');
+            }
+            componentWillUpdate(nextProps, nextState){
+                console.log('ステートが次の値に更新されます:',nextState);
+            }
         }
         // コンポーネントの利用
         ReactDOM.render(
