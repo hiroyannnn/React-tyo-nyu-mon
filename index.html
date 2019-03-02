@@ -13,13 +13,14 @@
         <script>
         // コンポーネントの定義
         class MyComponent extends React.Component{
-            constructor(props,context,updater){
-                super(props.context,updater)
-                this.state = {status:'Ready'}
-            }
             render(){
-                // h1タグにステートの値を表示する。
-                return React.createElement('h1',null,this.state.status)
+                return React.createElement(
+                    'input',
+                    {type:'text',
+                    placeholder: '値を入力してEnterを押下',
+                    onKeyPress: (e) => {
+                        if (e.key === 'Enter' && e.target.value) alert(e.target.value)
+                    }})
             }
         }
         // コンポーネントの利用
