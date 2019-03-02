@@ -13,26 +13,13 @@
         <script>
         // コンポーネントの定義
         class MyComponent extends React.Component{
-            constructor(props,context,updater){
-                super(props.context,updater)
-                this.state = {count:0}
-            }
             render(){
-                return [React.createElement(
-                    'input',
-                    {type:'text',
-                    onChange: (e) => this.setState({count:e.target.value.length})
-                    }),
-                    React.createElement('span',null, this.state.count),
+                return [
+                    <h1>hogehoge</h1>,
+                    <iunput type="text" size="10"/>
                     ]
             }
-            componentDidMount(){
-                console.log('マウントされました');
-            }
-            componentWillUpdate(nextProps, nextState){
-                console.log('ステートが次の値に更新されます:',nextState);
-            }
-        }
+        };
         // コンポーネントの利用
         ReactDOM.render(
             React.createElement(MyComponent),
