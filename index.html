@@ -13,15 +13,18 @@
         <script>
         // コンポーネントの定義
         class MyComponent extends React.Component{
+            constructor(props,context,updater){
+                super(props.context,updater)
+                this.state = {status:'Ready'}
+            }
             render(){
-                // h1タグにプロパティの値を表示する。
-                return React.createElement('h1',null,this.props.val)
+                // h1タグにステートの値を表示する。
+                return React.createElement('h1',null,this.state.status)
             }
         }
         // コンポーネントの利用
         ReactDOM.render(
-            // プロパティ「val」に'hoge'をセットする
-            React.createElement(MyComponent,{val: 'hoge'}),
+            React.createElement(MyComponent),
             document.getElementById('main')
         );
         </script>
