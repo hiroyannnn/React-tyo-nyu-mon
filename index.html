@@ -14,12 +14,14 @@
         // コンポーネントの定義
         class MyComponent extends React.Component{
             render(){
-                return React.createElement('h1',null,'Hello World!')
+                // h1タグにプロパティの値を表示する。
+                return React.createElement('h1',null,this.props.val)
             }
         }
         // コンポーネントの利用
         ReactDOM.render(
-            React.createElement(MyComponent),
+            // プロパティ「val」に'hoge'をセットする
+            React.createElement(MyComponent,{val: 'hoge'}),
             document.getElementById('main')
         );
         </script>
